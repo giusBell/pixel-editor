@@ -1,5 +1,31 @@
 <html>
-<body>
-  <script src="./index.js"></script>
-</body>
+  <body>
+    <head>
+      <link rel="stylesheet" type="text/css" href="./style.css" />
+    </head>
+    <script src="./index.js" async></script>
+
+    <header>
+      <h3>pixel editor</h3>
+    </header>
+
+    <section class="main">
+      <aside class="color-selector">
+        <input type="color" name="color" id="color" />
+      </aside>
+      <div class="grid-container">
+        <div class="grid-container__top">
+          <input type="number" name="grid-w" id="grid-w" />
+          X
+          <input type="number" name="grid-h" id="grid-h" />
+        </div>
+        <div class="grid-container__body">
+          <canvas id="canvas-grid" width="512" height="512"> </canvas>
+        </div>
+        <div class="grid-container__footer">
+          <button class="btn-download">Download</button>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
