@@ -1,4 +1,4 @@
-import { printGrid, printSquare, clear } from './grid';
+import { printGrid, printSquare, clear, download } from './grid';
 
 // get canvas
 const CANVAS_ID = 'canvas-grid';
@@ -17,11 +17,16 @@ let rows = gridWidth.value;
 // init grid
 printGrid(canvasEl, rows);
 
+// get download button
+const DOWNLOAD_BUTTON_ID = 'btn-download';
+const button = document.getElementById(DOWNLOAD_BUTTON_ID);
+
 // set listeners
 colorEl.addEventListener('change', (e) => (color = e.target.value));
 canvasEl.addEventListener('click', () => printSquare(canvasEl, rows, color));
 gridWidth.addEventListener('change', (e) => resizeGrid(e));
 gridHeight.addEventListener('change', (e) => resizeGrid(e));
+button.addEventListener('click', () => download(canvasEl));
 
 const setValue = (HTMLElement, event) => (HTMLElement.value = event.target.value);
 const resizeGrid = (e) => {

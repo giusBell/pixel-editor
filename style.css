@@ -38,8 +38,34 @@ aside {
 }
 
 .grid-container__body {
+  padding: 0 6rem;
   min-height: 500px;
   min-width: 500px;
-  box-shadow: 0 0 10px lightgray;
+  box-shadow: 0 0 5px lightgray;
   margin: 2rem 0;
+}
+
+.grid-container__footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-download {
+  background-color: #2e5fca;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.grid-container__footer__icon {
+  margin-right: 5px;
+}
+
+canvas {
+  cursor: crosshair;
 }

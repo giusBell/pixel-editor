@@ -7,19 +7,16 @@ export const printGrid = (canvasEl, rows) => {
 
   ctx.rect(0, 0, cWidth, cHeight);
   ctx.save();
-  if (rows / 2 === parseInt(rows / 2)) {
-    ctx.translate(0.5, 0.5);
-  }
   ctx.beginPath();
-  for (let i = 0; i < rows; i++) {
-    let x = (i + 1) * span;
-    let y = (i + 1) * span;
+  for (let i = 0; i <= rows; i++) {
+    let x = i * span;
+    let y = i * span;
     ctx.moveTo(x, 0);
     ctx.lineTo(x, cHeight);
     ctx.moveTo(0, y);
     ctx.lineTo(cHeight, y);
   }
-  ctx.lineWidth = 0.5;
+  ctx.lineWidth = 0.3;
   ctx.stroke();
   ctx.restore();
 };
@@ -49,4 +46,24 @@ export const clear = (canvasEl) => {
   const cHeight = canvasEl.offsetHeight;
 
   ctx.clearRect(0, 0, cWidth, cHeight);
+};
+
+export const download = (canvasEl) => {
+  const img = canvasEl.toDataURL('image/png');
+  downloadDataUrl('image', img);
+};
+
+const downloadDataUrl = (filename, dataUrl) => {
+  // build the 'a' element
+  let link = document.createElement('a');
+  link.download = filename;
+  link.target = '_blank';
+
+  // build the URI
+  link.href = dataUrl;
+  document.body.appendChild(link);
+  link.click();
+
+  // cleanup the DOM
+  document.body.removeChild(link);
 };
