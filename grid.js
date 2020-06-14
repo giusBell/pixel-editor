@@ -1,9 +1,8 @@
 // takes a canvas ID and prints a grid
 export const printGrid = (canvasEl, rows) => {
-  const canvas = document.getElementById(canvasEl);
-  const ctx = canvas.getContext('2d');
-  const cWidth = canvas.offsetWidth;
-  const cHeight = canvas.offsetHeight;
+  const ctx = canvasEl.getContext('2d');
+  const cWidth = canvasEl.offsetWidth;
+  const cHeight = canvasEl.offsetHeight;
   let span = cWidth / rows;
 
   ctx.rect(0, 0, cWidth, cHeight);
@@ -27,13 +26,12 @@ export const printGrid = (canvasEl, rows) => {
 
 // takes a canvas ID, the rows, the color and prints a square
 export const printSquare = (canvasEl, rows, color) => {
-  const canvas = document.getElementById(canvasEl);
-  const ctx = canvas.getContext('2d');
-  const cWidth = canvas.offsetWidth;
+  const ctx = canvasEl.getContext('2d');
+  const cWidth = canvasEl.offsetWidth;
   const span = cWidth / rows;
 
   // getting canvas coordinates of click
-  let rect = canvas.getBoundingClientRect();
+  let rect = canvasEl.getBoundingClientRect();
   let x = event.clientX - rect.left;
   let y = event.clientY - rect.top;
 
@@ -41,6 +39,14 @@ export const printSquare = (canvasEl, rows, color) => {
   x = (Math.ceil(x / span) - 1) * span;
   y = (Math.ceil(y / span) - 1) * span;
 
-  ctx.fillStyle = '#FF0000';
+  ctx.fillStyle = color;
   ctx.fillRect(x, y, span, span);
+};
+
+export const clear = (canvasEl) => {
+  const ctx = canvasEl.getContext('2d');
+  const cWidth = canvasEl.offsetWidth;
+  const cHeight = canvasEl.offsetHeight;
+
+  ctx.clearRect(0, 0, cWidth, cHeight);
 };
