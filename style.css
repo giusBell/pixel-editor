@@ -24,17 +24,23 @@ input[type='number'] {
 header {
   height: 2.5rem;
   background-color: rgb(237, 246, 255);
-  padding-left: 10rem;
   line-height: 2.5rem;
+}
+
+.logo {
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .main {
   display: flex;
-  padding: 2rem 10rem;
+  padding-top: 2rem;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 aside {
-  min-width: 10rem;
+  width: 20%;
 }
 
 .grid-container__body {

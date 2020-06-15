@@ -29,6 +29,7 @@ gridHeight.addEventListener('change', (e) => resizeGrid(e));
 button.addEventListener('click', () => download(canvasEl));
 
 const setValue = (HTMLElement, event) => (HTMLElement.value = event.target.value);
+
 const resizeGrid = (e) => {
   setValue(gridWidth, e);
   setValue(gridHeight, e);

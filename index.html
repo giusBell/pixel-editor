@@ -6,7 +6,9 @@
     <script src="./index.js" async></script>
 
     <header>
-      <h3>pixel editor</h3>
+      <div class="logo">
+        <h3>pixel editor</h3>
+      </div>
     </header>
 
     <section class="main">
@@ -15,9 +17,9 @@
       </aside>
       <div class="grid-container">
         <div class="grid-container__top">
-          <input type="number" name="grid-rows" value="16" id="grid-w" />
+          <input type="number" min="1" max="512" name="grid-rows" value="16" id="grid-w" />
           X
-          <input type="number" name="grid-rows" value="16" id="grid-h" />
+          <input type="number" min="1" max="512" name="grid-rows" value="16" id="grid-h" />
         </div>
         <div class="grid-container__body">
           <canvas id="canvas-grid" width="512" height="512"> </canvas>
